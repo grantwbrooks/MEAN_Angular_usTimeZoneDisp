@@ -1,0 +1,21 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+</div>
+<div>
+  <button (click)='lastClicked = PST; time = PST; show = true' [ngClass]="{ 'on': lastClicked === PST }">PST</button>
+  <button (click)='lastClicked = MST; time = MST; show = true' [ngClass]="{ 'on': lastClicked === MST }">MST</button>
+  <button (click)='lastClicked = CST; time = CST; show = true' [ngClass]="{ 'on': lastClicked === CST }">CST</button>
+  <button (click)='lastClicked = EST; time = EST; show = true' [ngClass]="{ 'on': lastClicked === EST }">EST</button>
+  <button (click)='lastClicked = UTC; time = UTC; show = true' [ngClass]="{ 'on': lastClicked === UTC }">UTC</button>
+  <button (click)='lastClicked = Clear; show = false' [ngClass]="{ 'on': lastClicked === Clear }">Clear</button>
+</div>
+<div style="text-align:center">
+  <h2 *ngIf = 'show'>{{time | date:'medium'}}</h2>
+</div>
+
+
+<!-- <td [ngClass]="{ 'on': email.importance }" *ngIf='email.importance'>High</td>
+<td [ngClass]="{ 'on': email.importance }" *ngIf='!email.importance'>Low</td> -->
